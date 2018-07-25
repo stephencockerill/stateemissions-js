@@ -1,0 +1,163 @@
+:root {
+  --gap: 5px;
+  --bg-color: #230F2B;
+  --chart-color: #EBEBBC;
+  --bar-color: #F21D41;
+  --bar-color-hover: #82B3AE;
+  --axis-color: grey;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background-color: var(--bg-color);
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.ChartContainer {
+  display: grid;
+  padding 5px 10px;
+  margin: 10px;
+  background-color: var(--chart-color);
+  border-radius: 5px 5px 5px 5px;
+  grid-template-rows: 100px 1fr 50px;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+.Chart {
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  align-items: flex-end;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-row-end: 2;
+  grid-column-end: 2;
+}
+
+.VerticalChart {
+  border-bottom: 5px solid var(--axis-color);
+  border-left: 5px solid var(--axis-color);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows; 1fr;
+  grid-column-gap: var(--gap);
+  height: 50vh;
+}
+
+.HorizontalChart {
+  border-top: 5px solid var(--axis-color);
+  border-bottom: 5px solid var(--axis-color);
+  border-left: 5px solid var(--axis-color);
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-row-gap: var(--gap);
+}
+
+.Chart__bar {
+  display: block;
+  border-radius: 5px 5px 5px 5px;
+  background-color: var(--bar-color);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.Chart__bar--vertical {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.Chart__bar--horizontal {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.Chart__bar:hover {
+  background-color: var(--bar-color-hover);
+}
+
+.Chart__title--vertical {
+  grid-row-start: 1;
+	grid-column-start: 2;
+	text-align: center;
+}
+
+.Chart__title--horizontal {
+  margin: 0;
+  padding-top: 10px;
+  grid-row-start: 1;
+	text-align: center;
+}
+
+
+.ChartAxisContainer--left {
+  padding: 0px;
+  margin: 0px;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ChartAxis__text--left {
+  grid-column-start: 1;
+	// padding-top: 50%;
+	margin-left: 5px;
+}
+
+.ChartAxis__scale--left {
+  padding: 0px;
+  margin: 0px;
+  grid-column-start: 2;
+  display: grid;
+  grid-template-rows: repeat(7, calc(100% / 7));
+}
+
+.ChartAxisContainer--top {
+  padding: 0px;
+  margin: 0px;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.ChartAxis__text--top {
+  margin: 0;
+  grid-row-start: 2;
+  text-align: center;
+}
+
+.ChartAxis__scale--top {
+  padding: 0px;
+  margin: 0px;
+  grid-row-start: 3;
+  display: grid;
+  grid-template-columns: repeat(7, calc(100% / 7));
+}
+
+.ChartAxis__scale--bottom {
+  padding: 0px;
+  margin: 0px;
+  grid-row-start: 3;
+  grid-column-start: 2;
+  display: grid;
+  grid-template-columns: repeat(7, calc(100% / 7));
+  grid-template-rows: 1fr;
+}
+
+.ChartAxis__scale__unit {
+  display: block;
+  text-align: center;
+  line-height: 0;
+}
+
+.ChartAxis__scale__unit--top {
+  display: block;
+  text-align: right;
+}
+
+.ChartAxis__scale__unit--bottom {
+  display: block;
+  text-align: right;
+  line-height: 2;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/site.css" />
+  <body>
+    <select id="yearSelect">
+    </select>
+    <div class="ChartContainer">
+      <h1 class="Chart__title Chart__title--vertical">States with Greatest CO2 Emissions in 2014</h1>
+      <div class="ChartAxisContainer--left">
+        <p class="ChartAxis__text--left">mmt CO2</p>
+        <ol class="ChartAxis__scale--left">
+          <li class="ChartAxis__scale__unit">700</li>
+          <li class="ChartAxis__scale__unit">600</li>
+          <li class="ChartAxis__scale__unit">500</li>
+          <li class="ChartAxis__scale__unit">400</li>
+          <li class="ChartAxis__scale__unit">300</li>
+          <li class="ChartAxis__scale__unit">200</li>
+          <li class="ChartAxis__scale__unit">100</li>
+        </ol>
+      </div>
+      <ol id="verticalChart" class="Chart VerticalChart">
+      </ol>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    
+    <div class="ChartContainer">
+      <div class="ChartAxisContainer--top">
+        <h1 class="Chart__title Chart__title--horizontal">State CO2 Emissions in 2014</h1>
+        <p class="ChartAxis__text--top">mmt CO2</p>
+        <ol class="ChartAxis__scale--top">
+          <li class="ChartAxis__scale__unit--top">100</li>
+          <li class="ChartAxis__scale__unit--top">200</li>
+          <li class="ChartAxis__scale__unit--top">300</li>
+          <li class="ChartAxis__scale__unit--top">400</li>
+          <li class="ChartAxis__scale__unit--top">500</li>
+          <li class="ChartAxis__scale__unit--top">600</li>
+          <li class="ChartAxis__scale__unit--top">700</li>
+        </ol>
+      </div>
+      <ol id="horizontalChart" class="Chart HorizontalChart">
+      </ol>
+      <ol class="ChartAxis__scale--bottom">
+        <li class="ChartAxis__scale__unit--bottom">100</li>
+        <li class="ChartAxis__scale__unit--bottom">200</li>
+        <li class="ChartAxis__scale__unit--bottom">300</li>
+        <li class="ChartAxis__scale__unit--bottom">400</li>
+        <li class="ChartAxis__scale__unit--bottom">500</li>
+        <li class="ChartAxis__scale__unit--bottom">600</li>
+        <li class="ChartAxis__scale__unit--bottom">700</li>
+      </ol>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+</html>
