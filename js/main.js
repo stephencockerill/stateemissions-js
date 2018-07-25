@@ -1,17 +1,3 @@
-function barAlert(event) {
-  console.log(event);
-  let element = event.srcElement;
-  let state = element.textContent.trim();
-  let year = element.getAttribute("year");
-  let data = element.getAttribute("data-value");
-  let message = state
-    + ' emitted '
-    + data
-    + ' million metric tons of CO2 in '
-    + year;
-  alert(message);
-};
-
 function initialize() {
   const earliest_year = '1980';
   const latest_year = '2014';
@@ -19,7 +5,6 @@ function initialize() {
 }
 
 function render() {
-  console.log('render()')
   year_selected = document.querySelector('#yearSelect').value
   getEmissionsData(year_selected);
   updateChartTitleYears(year_selected);
@@ -36,7 +21,6 @@ function getEmissionsData(year) {
 };
 
 function filterByYear(data, year) {
-  console.log('filterByYear')
   let maxValue = 0;
   let filtered = {
     'data': [],
@@ -64,12 +48,10 @@ function filterByYear(data, year) {
     filtered.data.push(stateObj);
   };
   filtered.maxValue = maxValue;
-  console.log(filtered);
   return filtered;
 };
 
 function addVerticalChartBars(data) {
-  console.log('addChartBars');
 
   let chart = document.querySelector('#verticalChart');
   // remove any existing bars
@@ -97,8 +79,6 @@ function addVerticalChartBars(data) {
 };
 
 function addHorizontalChartBars(data) {
-  console.log('addChartBars');
-
   let chart = document.querySelector('#horizontalChart');
   // remove any existing bars
   removeChildren(chart);
@@ -124,10 +104,8 @@ function addHorizontalChartBars(data) {
 };
 
 function addYearSelectOptions(start, end) {
-  console.log('addYearSelect');
   let yearSelect = document.querySelector('#yearSelect');
   yearSelect.onchange = render;
-  console.log(yearSelect);
   let year = end 
   // add an option for each year in the range of years available
   while (year >= start) {
@@ -146,13 +124,24 @@ function removeChildren(element) {
 };
 
 function updateChartTitleYears(selected_year) {
-  console.log('updateChartTitleYears()');
-  console.log(document.querySelectorAll('.Chart__title'));
   for (let title of document.querySelectorAll('.Chart__title')) {
-    console.log(title);
     title.textContent = title.textContent.slice(0, -4) + selected_year;
   };
 };
+
+function barAlert(event) {
+  let element = event.srcElement;
+  let state = element.textContent.trim();
+  let year = element.getAttribute("year");
+  let data = element.getAttribute("data-value");
+  let message = state
+    + ' emitted '
+    + data
+    + ' million metric tons of CO2 in '
+    + year;
+  alert(message);
+};
+
 
 // initialize one time then render
 initialize();
